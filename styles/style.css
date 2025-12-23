@@ -1,5 +1,5 @@
 body {
-	background: url("../images/bg.png") 480px/790px no-repeat;
+	background: url("../images/bg-dandelion.png") 480px/790px no-repeat;
 	padding-top: 220px;
 }
 
@@ -38,6 +38,10 @@ body {
 	width: 290px;
 }
 
+.product-card__img img {
+	width: 100%;
+}
+
 .product-card__skin-type {
 	font-weight: 400;
 	font-size: 12px;
@@ -56,6 +60,7 @@ body {
 .product-card__descr {
 	font-weight: 400;
 	font-size: 13px;
+	line-height: 18px;
 	color: #515076;
 	margin-bottom: 15px;
 }
