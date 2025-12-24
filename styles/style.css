@@ -24,6 +24,11 @@ body {
 	position: relative;
 }
 
+.subtitle-btn {
+	display: inline;
+	margin-right: 10px;
+}
+
 .product-wrapper__background {
 	position: absolute;
 	top: -410px;
