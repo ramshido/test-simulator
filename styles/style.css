@@ -1,5 +1,4 @@
 body {
-	background: url("../images/bg-dandelion.png") 480px/790px no-repeat;
 	padding-top: 220px;
 }
 
@@ -22,6 +21,14 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	position: relative;
+}
+
+.product-wrapper__background {
+	position: absolute;
+	top: -410px;
+	left: 0px;
+	z-index: -1;
 }
 
 .product-card {
