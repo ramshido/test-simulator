@@ -41,7 +41,7 @@ body {
 }
 
 .product-card_bg-blue {
-	background-color: rgb(168, 255, 255);
+	background-color: rgb(0, 219, 219);
 }
 
 .product-card__img {
@@ -120,5 +120,5 @@ body {
 }
 
 .product-card__btn:hover {
-	background-color: rgb(146, 255, 188);
+	background-color: rgb(210, 248, 225);
 }
