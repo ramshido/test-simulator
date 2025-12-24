@@ -3,7 +3,7 @@ const productCardBtns = document.querySelectorAll('.product-card__btn');
 
 productCardBtns.forEach((btn) => {
 	btn.addEventListener("click", () => {
-		btn.classList.toggle('product-card_bg-blue');
+		btn.classList.toggle('bg-blue');
 	});
 });
 
@@ -57,5 +57,5 @@ function outputConsoleLog(message) {
 const title = document.querySelector('.title');
 
 title.addEventListener('mouseover', () => {
-	console.log('Выбери свой продукт');
+	console.log(title.innerHTML);
 });
