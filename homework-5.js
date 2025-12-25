@@ -1,26 +1,26 @@
 // 1. Создать функцию, которая принимает 2 параметра: город и температуру и выводит сообщение в консоль "Сейчас в X температура  — Y градусов по Цельсию"
 
-function outputMessage(city, temp) {
+function outputTemperatureFromCity(city, temp) {
 	console.log(`Сейчас в ${city} температура  — ${temp} градусов по Цельсию`);
 }
-outputMessage('Derbent', 8);
+outputTemperatureFromCity('Derbent', 8);
 
 // 2. Создать переменную, которая хранит внутри себя скорость света (гуглим). Создать функцию, которая принимает 1 аргумент - скорость, 
 // внутри функции происходит проверка: если переданная скорость выше скорости света — выводим лог "Сверхсветовая скорость", если ниже — "Субсветовая  скорость"? если равна — "Скорость света"
 
-const lightSpeed = 299792458;
+const LIGHT_SPEED = 299792458;
 
-function outputLightSpeedMessage(speed) {
-	if (speed > lightSpeed) {
+function compareSpeed(speed) {
+	if (speed > LIGHT_SPEED) {
 		console.log("Сверхсветовая скорость");
-	} else if (speed < lightSpeed) {
+	} else if (speed < LIGHT_SPEED) {
 		console.log("Субсветовая  скорость?");
-	} else if (speed == lightSpeed) {
+	} else if (speed == LIGHT_SPEED) {
 		console.log("Скорость света");
 	};
 }
 
-outputLightSpeedMessage(450000000);
+compareSpeed(450000000);
 
 // 3. Создать переменную №1, которая содержит продукт и переменную №2, которая содержит его цену (на ваше усмотрение).
 // Далее создаем функцию, которая принимает 1 параметр - текущий бюджет, внутри функции происходит проверка: 
@@ -30,7 +30,7 @@ outputLightSpeedMessage(450000000);
 const product = 'mouse';
 const productPrice = 159;
 
-function outputPurchasingProductMessage(budget) {
+function purchaseProduct(budget) {
 	if (budget > productPrice) {
 		console.log(`${product} приобретён. Спасибо за покупку!`);
 	} else {
@@ -39,7 +39,7 @@ function outputPurchasingProductMessage(budget) {
 	}
 }
 
-outputPurchasingProductMessage(33)
+purchaseProduct(33)
 
 // 4. Создать 1 функцию и именовать её по своему усмотрению
 
@@ -53,6 +53,8 @@ function isLogIn(access = false) {
 
 // 5. Создать 3 переменных (без разницы каких) и именовать их по своему усмотрению
 
-const products = [{ name: 'Mis', price: 3400 }, { name: 'Talen', price: 450 }, { name: 'Prod', price: 342 }];
+const products = [
+	{ name: 'Mis', price: 3400 }, { name: 'Talen', price: 450 }, { name: 'Prod', price: 342 }
+];
 let userName = 'Burglar';
-const RED_COLOR= '#FF0000';
+const RED_COLOR = '#FF0000';
