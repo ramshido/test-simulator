@@ -56,6 +56,6 @@ function outputConsoleLog(message) {
 // Заголовок, вывод в консоль
 const title = document.querySelector('.title');
 
-title.addEventListener('mouseover', () => {
+title.addEventListener('click', () => {
 	console.log(title.innerHTML);
 });
