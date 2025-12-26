@@ -28,8 +28,8 @@ car.owner = user;
 function checkObjectHasMaxSpeedKey(obj) {
 	if (obj.maxSpeed) {
 		obj.maxSpeed = 305;
-	}
-}
+	};
+};
 
 checkObjectHasMaxSpeedKey(car);
 
@@ -39,7 +39,7 @@ function outputObjKeyVal(obj, key) {
 	if (obj[key]) {
 		console.log(obj[key]);
 	};
-}
+};
 
 outputObjKeyVal(car, 'model');
 
@@ -55,7 +55,7 @@ const productsName = [
 	'Potato',
 	'Tomato',
 	'Cucumber'
-]
+];
 
 // 6. Создать массив объектов, где объект это книга, после, используя известный метод, 
 // добавить еще одну книгу в конец
@@ -92,7 +92,7 @@ const bookOfGetReadyForFirstPlayer = {
 	author: 'Эрнест Клайн',
 	PublicationDate: 2011,
 	genre: 'Fantasy',
-}
+};
 
 Books.push(bookOfGetReadyForFirstPlayer);
 
@@ -130,9 +130,9 @@ function setRareKeyForBook(Books) {
 			book.isRare = true;
 		} else {
 			book.isRare = false
-		}
+		};
 	});
 	Books = { ...BooksWithRarityVal };
-}
+};
 
 setRareKeyForBook(combinedBooks);
