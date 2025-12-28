@@ -2,9 +2,9 @@
 	font-family: 'Montserrat';
 	src: local("Montserrat-Regular"), local("Montserrat Regular");
 	src:
-		url('Montserrat-Regular.woff2') format('woff2'),
+		url('../fonts/Montserrat-Regular.woff2') format('woff2'),
 		url('../fonts/Montserrat-Regular.woff') format('woff'),
-		url('Montserrat-Regular.svg#Montserrat-Regular') format('svg'),
+		url('../fonts/Montserrat-Regular.svg#Montserrat-Regular') format('svg'),
 		url('../fonts/Montserrat-Regular.eot'),
 		url('../fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
 		url('../fonts/Montserrat-Regular.ttf') format('truetype');

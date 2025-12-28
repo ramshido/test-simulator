@@ -26,7 +26,7 @@ car.owner = user;
 // 3. Написать функцию которая проверяет, есть ли у объекта car максимальная скорость, если нет, добавляет
 
 function checkObjectHasMaxSpeedKey(obj) {
-	if (obj.maxSpeed) {
+	if (!obj.maxSpeed) {
 		obj.maxSpeed = 305;
 	};
 };
@@ -60,7 +60,7 @@ const productsName = [
 // 6. Создать массив объектов, где объект это книга, после, используя известный метод, 
 // добавить еще одну книгу в конец
 
-const Books = [
+const books = [
 	{
 		name: 'The Adventure of Don Quixote',
 		author: 'Miguel de Cervantes',
@@ -94,7 +94,7 @@ const bookOfGetReadyForFirstPlayer = {
 	genre: 'Fantasy',
 };
 
-Books.push(bookOfGetReadyForFirstPlayer);
+books.push(bookOfGetReadyForFirstPlayer);
 
 // 7. Создать массив книг об определенной вселенной затем объединить этот массив и тот выше в один
 
@@ -119,20 +119,23 @@ const marvelBooks = [
 	},
 ];
 
-const combinedBooks = Books.concat(marvelBooks);
+const combinedBooks = books.concat(marvelBooks);
 
 // 8. Написать функцию, которая принимает массив из предыдущего задания и проверяет на следующее: 
 // Если книга выпущена до 1556 года, устанавливаем true (да, это редкий), нет - false (значит это не редкий).
 
-function setRareKeyForBook(Books) {
-	const BooksWithRarityVal = Books.map((book) => {
+function getBooksWithSetedRareVal(books) {
+	const booksWithRarityVal = books.map((book) => {
 		if (book.PublicationDate <= 1990) {
-			book.isRare = true;
+			book = { ...book, isRare: true }
 		} else {
-			book.isRare = false
+			book = { ...book, isRare: false }
 		};
+		return book;
 	});
-	Books = { ...BooksWithRarityVal };
+	console.log(booksWithRarityVal);
+	
+	return booksWithRarityVal;
 };
 
-setRareKeyForBook(combinedBooks);
+getBooksWithSetedRareVal(combinedBooks);
