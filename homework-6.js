@@ -133,7 +133,6 @@ function getBooksWithSetedRareVal(books) {
 		};
 		return book;
 	});
-	console.log(booksWithRarityVal);
 	
 	return booksWithRarityVal;
 };
