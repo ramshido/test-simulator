@@ -65,12 +65,19 @@ userComments.map(userComment => {
 	};
 });
 
-console.log(userComments);
-
-
 // Уровень 3:
-
 // 11. Почитать про метод массива reduce. Используя его, вывести массив почт и провернуть тоже самое с помощью метода map
+
+const userEmails = userComments.reduce((acc, userComment,) => {
+	acc.push(userComment.email);
+
+	return acc;
+}, []);
+
+const userEmails2 = userComments.map(userComment => {
+	return userComment.email;
+})
 
 // 12. Почитать про методы toString(), join() и перебрав массив с задания №11, привести его к строке.
 
+const stringedUserEmails = userEmails.toString();
