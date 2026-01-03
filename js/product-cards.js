@@ -59,4 +59,4 @@ export const productCards = [
 		price: 7520,
 		currency: '₽',
 	},
-]
+];
