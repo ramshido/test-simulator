@@ -4,7 +4,7 @@ import { userComments } from './comments.js';
 // 1. Создать массив чисел от 1 до 10. Отфильтровать, чтобы получить массив чисел начиная с 5
 
 const numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const numbersArrayFromFive = numbersArray.slice(4);
+const numbersArrayFromFive = numbersArray.filter((item) => item >= 5);
 
 // 2. Создать массив строк определенной темы (фильмы, книги) и проверить, есть ли в массиве что-то определенное.
 
@@ -29,41 +29,25 @@ reverseArray(numbersArray);
 
 // 7. Вывести в консоль массив тех комментариев, почта пользователей которых содержит ".com"
 
-const userCommentsByDotCom = userComments.filter(userComment => {
-	if (userComment.email.includes('.com')) {
-		return userComment;
-	};
-});
+const userCommentsByDotCom = userComments.filter(userComment => userComment.email.includes('.com'));
 
 // 8. Перебрать массив таким образом, что бы пользователи с id меньше или равно 5 имели postId: 2, а те, у кого id больше 5, имели postId: 1
 
-userComments.map(userComment => {
-	if (userComment.id <= 5) {
-		userComment.postId = 2;
-	} else {
-		userComment.postId = 1;
-	};
-});
+userComments.map(userComment => userComment.id <= 5 ? userComment.postId = 2 : userComment.postId = 1);
 
 // 9. Перебрать массив, что бы объекты состояли только из айди и имени
 
-const users = userComments.map(userComment => {
-	userComment = {
-		id: userComment.id,
-		name: userComment.name,
-	};
-	return userComment;
-});
+const users = userComments.map(userComment => ({
+	id: userComment.id,
+	name: userComment.name,
+}));
 
 // 10. Перебираем массив, добавляем объектам свойство isInvalid и проверяем: если длина тела сообщения (body) больше 180 символов - устанавливаем true, меньше - false.
 
-userComments.map(userComment => {
-	if (userComment.body.length > 180) {
-		userComment.isInvalid = true;
-	} else {
-		userComment.isInvalid = false;
-	};
-});
+userComments.map(userComment => ({
+	...userComment,
+	isInvalid: userComment.body.length > 180,
+}));
 
 // Уровень 3:
 // 11. Почитать про метод массива reduce. Используя его, вывести массив почт и провернуть тоже самое с помощью метода map
@@ -74,9 +58,7 @@ const userEmails = userComments.reduce((acc, userComment,) => {
 	return acc;
 }, []);
 
-const userEmails2 = userComments.map(userComment => {
-	return userComment.email;
-})
+const userEmails2 = userComments.map(userComment => userComment.email);
 
 // 12. Почитать про методы toString(), join() и перебрав массив с задания №11, привести его к строке.
 
