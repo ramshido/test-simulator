@@ -37,7 +37,7 @@ export const productCards = [
 	},
 	{
 		img: 'gift-set-1',
-		title: 'Подарочный набор 1',
+		title: 'Подарочный набор №1',
 		descr: 'Набор, состоящий из увлажняющего крема и маски.',
 		structure: [
 			'воски',
@@ -49,7 +49,7 @@ export const productCards = [
 	},
 	{
 		img: 'gift-set-5',
-		title: 'Подарочный набор 5',
+		title: 'Подарочный набор №5',
 		descr: 'Весь набор средств Invisible symphony, крем, маска, мусс и гель для умывания.',
 		structure: [
 			'воски',

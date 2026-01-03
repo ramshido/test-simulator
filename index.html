@@ -13,134 +13,27 @@
 <body>
 	<h1 class="title">Вибери свой продукт</h1>
 	<div class="container">
-		<button class="subtitle-btn" id="change-color-first-card">Сменить цвет первой карточки</button>
-		<button class="subtitle-btn" id="change-color-all-cards">Сменить цвет всех карточек</button>
-		<button class="subtitle-btn" id="open-google">Открыть Google</button>
-		<button class="subtitle-btn" id="output-console-log">Вывод алерт</button>
 		<div class="product-wrapper">
 			<img src="../images/bg-dandelion.png" class="product-wrapper__background">
-			<div class="product-card product-card-first">
-				<div class="product-card__img"><img src="images/moisturizing-mousse.png" alt="img"></div>
-				<p class="product-card__skin-type">для нормальной кожи</p>
-				<h2 class="product-card__title">Увлажняющий мусс</h2>
-				<p class="product-card__descr">
-					Глубоко увлажняют кожу лица, оставляя её мягкой и гладкой.
-				</p>
-				<ul class="product-card__structure">
-					<span class="product-card__str-subtitle">Состав:</span>
-					<li class="product-card__structure-item">активные натуральные комплексы</li>
-					<li class="product-card__structure-item">витамины С, А, РР, В И Е</li>
-					<li class="product-card__structure-item">солнцезащитные компоненты</li>
-				</ul>
-				<div class="product-card__price-wrapper">
-					<p class="product-card__price">Цена</p>
-					<p class="product-card__price-val">2 750 &#8381;</p>
-				</div>
-				<div class="product-card__btn">Купить</div>
-			</div>
-
+		</div>
+		<template id="product-card-template">
 			<div class="product-card">
-				<div class="product-card__img"><img src="images/moisturizing-mask.png" alt="img"></div>
-				<p class="product-card__skin-type">для нормальной кожи</p>
-				<h2 class="product-card__title">Увлажняющая маска</h2>
-				<p class="product-card__descr">
-					Способствует удерживанию влаги в верхних слоях кожи.
-				</p>
-				<ul class="product-card__structure">
-					<span class="product-card__str-subtitle">Состав:</span>
-					<li class="product-card__structure-item">воски</li>
-					<li class="product-card__structure-item">минералы</li>
-					<li class="product-card__structure-item">масла</li>
-				</ul>
-				<div class="product-card__price-wrapper">
-					<p class="product-card__price">Цена</p>
-					<p class="product-card__price-val">3 500 &#8381;</p>
-				</div>
-				<div class="product-card__btn">Купить</div>
-			</div>
-			<div class="product-card">
-				<div class="product-card__img"><img src="images/face-wash-gel.png" alt="img"></div>
-				<p class="product-card__skin-type">для нормальной кожи</p>
-				<h2 class="product-card__title">Гель для умывания</h2>
-				<p class="product-card__descr">
-					Интенсивно очищает, не повреждает защитный барьер кожи.
-				</p>
-				<ul class="product-card__structure">
-					<span class="product-card__str-subtitle">Состав:</span>
-					<li class="product-card__structure-item">минералы</li>
-					<li class="product-card__structure-item">витамины С, А, РР, В И Е</li>
-					<li class="product-card__structure-item">солнцезащитные компоненты</li>
-				</ul>
-				<div class="product-card__price-wrapper">
-					<p class="product-card__price">Цена</p>
-					<p class="product-card__price-val">1 650 &#8381;</p>
-				</div>
-				<div class="product-card__btn">Купить</div>
-			</div>
-			<div class="product-card">
-				<div class="product-card__img"><img src="images/gift-set-1.png" alt="img"></div>
-				<p class="product-card__skin-type">для нормальной кожи</p>
-				<h2 class="product-card__title">Подарочный набор &#x2116;1</h2>
-				<p class="product-card__descr">
-					Набор, состоящий из увлажняющего крема и маски.
-				</p>
-				<ul class="product-card__structure">
-					<span class="product-card__str-subtitle">Состав:</span>
-					<li class="product-card__structure-item">воски</li>
-					<li class="product-card__structure-item">минералы</li>
-					<li class="product-card__structure-item">масла</li>
-				</ul>
-				<div class="product-card__price-wrapper">
-					<p class="product-card__price">Цена</p>
-					<p class="product-card__price-val">4 750 &#8381;</p>
-				</div>
-				<div class="product-card__btn">Купить</div>
-			</div>
-			<div class="product-card">
-				<div class="product-card__img"><img src="images/gift-set-5.png" alt="img"></div>
-				<p class="product-card__skin-type">для нормальной кожи</p>
-				<h2 class="product-card__title">Подарочный набор &#x2116;5</h2>
-				<p class="product-card__descr">
-					Весь набор средств Invisible symphony, крем, маска, мусс и гель для умывания.
-				</p>
-				<ul class="product-card__structure">
-					<span class="product-card__str-subtitle">Состав:</span>
-					<li class="product-card__structure-item">воски</li>
-					<li class="product-card__structure-item">минералы</li>
-					<li class="product-card__structure-item">масла</li>
-				</ul>
-				<div class="product-card__price-wrapper">
-					<h2 class="product-card__price">Цена</h2>
-					<h2 class="product-card__price-val">7 520 &#8381;</h2>
-				</div>
-				<div class="product-card__btn">Купить</div>
-			</div>
-
-			<div class="template-test-wrapper"></div>
-
-			<template id="product-card-template">
-				<div class="product-card__img">
-					<img src="" alt="">
+				<div class="product-card__img-wrapper">
+					<img src="" alt="" class="product-card__img">
 				</div>
 				<p class="product-card__skin-type">для нормальной кожи</p>
 				<h2 class="product-card__title"></h2>
-				<p class="product-card__descr">
-					
-				</p>
+				<p class="product-card__descr"></p>
 				<ul class="product-card__structure">
 					<span class="product-card__str-subtitle">Состав:</span>
-					<li class="product-card__structure-item"></li>
-					<li class="product-card__structure-item"></li>
-					<li class="product-card__structure-item"></li>
 				</ul>
 				<div class="product-card__price-wrapper">
 					<h2 class="product-card__price">Цена</h2>
 					<h2 class="product-card__price-val"></h2>
 				</div>
 				<div class="product-card__btn">Купить</div>
-			</template>
-
-		</div>
+			</div>
+		</template>
 	</div>
 	</div>
 	<script src="js/main.js"></script>
