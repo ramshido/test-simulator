@@ -51,8 +51,10 @@ function renderCards(cardsArray, cardsNumber) {
 			getCardClones('structure').appendChild(li);
 		});
 
+		const firstCharacterOfPrice = String(card.price)[0];
+		const priceWithoutFirstCharacter = String(card.price).split('').slice(1).join('');
 		getCardClones('price-val').textContent =
-			`${String(card.price)[0]} ${String(card.price).split('').slice(1).join('')} ${card.currency}`;
+			`${firstCharacterOfPrice} ${priceWithoutFirstCharacter} ${card.currency}`;
 
 		productCardWrapper.appendChild(cardClone);
 	});
