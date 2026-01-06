@@ -27,11 +27,8 @@ function getCardsNumber(userNumber) {
 	return cardsNumber;
 }
 
-function renderCards(cardsArray, cardsNumber) {
-
-	const productCardsProfile = cardsArray.slice(0, cardsNumber);
-
-	productCardsProfile.forEach(card => {
+function renderCards(cardsArray) {
+	cardsArray.forEach(card => {
 		const cardClone = productCardTemplate.content.cloneNode(true);
 
 		function getCardClones(element) {
@@ -65,7 +62,10 @@ const handleWindowLoad = () => {
 	const promtResult = prompt('Сколько карточек отобразить? От 1 до 5', 1);
 
 	const cardsNumber = getCardsNumber(promtResult);
-	renderCards(productCards, cardsNumber);
+
+	const productCardsProfile = productCards.slice(0, cardsNumber);
+	renderCards(productCardsProfile);
+
 }
 
 window.addEventListener('load', handleWindowLoad);
