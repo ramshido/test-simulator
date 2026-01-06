@@ -34,24 +34,24 @@ function renderCards(cardsArray, cardsNumber) {
 	productCardsProfile.forEach(card => {
 		const cardClone = productCardTemplate.content.cloneNode(true);
 
-		function getCardClone(element) {
+		function getCardClones(element) {
 			return cardClone.querySelector(`.product-card__${element}`);
 		}
 
-		getCardClone('img').setAttribute('src', `images/${card.img}.png`);
-		getCardClone('img').setAttribute('alt', `${card.img}.png`);
+		getCardClones('img').setAttribute('src', `images/${card.img}.png`);
+		getCardClones('img').setAttribute('alt', `${card.img}.png`);
 
-		getCardClone('title').textContent = card.title;
-		getCardClone('descr').textContent = card.descr;
+		getCardClones('title').textContent = card.title;
+		getCardClones('descr').textContent = card.descr;
 
 		card.structure.forEach(item => {
 			const li = document.createElement('li');
 			li.classList.add('product-card__structure-item');
 			li.textContent = item;
-			getCardClone('structure').appendChild(li);
+			getCardClones('structure').appendChild(li);
 		});
 
-		getCardClone('price-val').textContent =
+		getCardClones('price-val').textContent =
 			`${String(card.price)[0]} ${String(card.price).split('').slice(1).join('')} ${card.currency}`;
 
 		productCardWrapper.appendChild(cardClone);
@@ -67,3 +67,4 @@ const handleWindowLoad = () => {
 }
 
 window.addEventListener('load', handleWindowLoad);
+
