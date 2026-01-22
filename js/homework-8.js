@@ -65,8 +65,6 @@ const handleWindowLoad = () => {
 
 	const productCardsProfile = productCards.slice(0, cardsNumber);
 	renderCards(productCardsProfile);
-
 }
 
 window.addEventListener('load', handleWindowLoad);
-

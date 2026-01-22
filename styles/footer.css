@@ -1,0 +1,148 @@
+:root {
+	--primary-bg-color: #3A3A3A;
+	--primary-text-color: #ffffff;
+}
+
+.footer {
+	background-color: var(--primary-bg-color);
+	padding: 85px 79.5px 28px;
+}
+
+.footer__container {
+	max-width: 1600px;
+	margin: 0 auto;
+}
+
+.footer__navigation {
+	margin-bottom: 162px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer__social-info-wrapper {
+	margin-right: 144px;
+}
+
+.footer__social-info-title {
+	font-weight: 700;
+	font-size: 28px;
+	color: var(--primary-text-color);
+	margin-bottom: 30px;
+}
+
+.footer__social-info-subtitle {
+	color: var(--primary-text-color);
+	font-weight: 400;
+	font-size: 17px;
+	margin-bottom: 42px;
+}
+
+.footer__social-links {
+	display: flex;
+}
+
+.soc-network {
+	display: block;
+	max-width: 22px;
+	margin-right: 30.5px;
+}
+
+.soc-network img {
+	width: 100%;
+}
+
+.footer__subscribe-container {
+	margin-right: 250px;
+}
+
+.subscribe-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.subscribe-container__title {
+	font-weight: 400;
+	font-size: 24px;
+	color: var(--primary-text-color);
+	margin-bottom: 16px;
+}
+
+.subscribe-container__form {
+	width: 477px;
+	height: 61px;
+	background-color: #ffffff;
+	border-radius: 10px;
+
+	padding: 20px 15px 20px 38px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.subscribe-container__input {
+	font-weight: 400;
+	font-size: 16px;
+	width: 260px;
+}
+
+.subscribe-container__btn {
+	font-weight: 400;
+	font-size: 18px;
+	background-color: #ffffff;
+	position: relative;
+}
+
+.subscribe-container__btn::before {
+	content: '';
+	display: block;
+	width: 1px;
+	height: 18px;
+	background-color: #000000;
+	position: absolute;
+	left: -21px;
+}
+
+.footer__quick-links {
+	display: flex;
+	flex-direction: column;
+}
+
+.footer__quick-links-title {
+	font-size: 20px;
+	color: var(--primary-text-color);
+	margin-bottom: 23px;
+}
+
+.footer__quick-links-item {
+	font-weight: 400;
+	font-size: 18px;
+	color: var(--primary-text-color);
+	margin-bottom: 17px;
+}
+
+.footer__quick-links-item:hover {
+	border-bottom: 1px solid #FFFFFF;
+}
+
+.footer__product-address-wrapper {
+	position: relative;
+	text-align: center;
+}
+
+.footer__product-address-wrapper::before {
+	content: '';
+	display: block;
+	width: 66px;
+	height: 1px;
+	background-color: #ffffff;
+	position: absolute;
+	top: -33px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.footer__product-address {
+	font-weight: 400;
+	font-size: 18px;
+	color: var(--primary-text-color);
+}
