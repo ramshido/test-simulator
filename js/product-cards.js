@@ -1,5 +1,6 @@
 export const productCards = [
 	{
+		id: 1,
 		img: 'moisturizing-mousse',
 		title: 'Увлажняющий мусс',
 		descr: 'Глубоко увлажняют кожу лица, оставляя её мягкой и гладкой.',
@@ -12,6 +13,7 @@ export const productCards = [
 		currency: '₽',
 	},
 	{
+		id: 2,
 		img: 'moisturizing-mask',
 		title: 'Увлажняющая маска',
 		descr: 'Способствует удерживанию влаги в верхних слоях кожи.',
@@ -24,6 +26,7 @@ export const productCards = [
 		currency: '₽',
 	},
 	{
+		id: 3,
 		img: 'face-wash-gel',
 		title: 'Гель для умывания',
 		descr: 'Интенсивно очищает, не повреждает защитный барьер кожи.',
@@ -36,6 +39,7 @@ export const productCards = [
 		currency: '₽',
 	},
 	{
+		id: 4,
 		img: 'gift-set-1',
 		title: 'Подарочный набор №1',
 		descr: 'Набор, состоящий из увлажняющего крема и маски.',
@@ -48,6 +52,7 @@ export const productCards = [
 		currency: '₽',
 	},
 	{
+		id: 5,
 		img: 'gift-set-5',
 		title: 'Подарочный набор №5',
 		descr: 'Весь набор средств Invisible symphony, крем, маска, мусс и гель для умывания.',

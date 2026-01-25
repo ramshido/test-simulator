@@ -1,4 +1,11 @@
 import { productCards } from './product-cards.js';
+import {
+	getFromStorage,
+	setToStorage,
+	updateStorageDataByFilter,
+	removeFromStorage,
+	getStorageDataArrayLength,
+} from './local-storage-api.js';
 
 const productCardTemplate = document.getElementById('product-card-template');
 const productCardWrapper = document.querySelector('.product-wrapper');
@@ -17,6 +24,8 @@ console.log(productProfile);
 // 1, 2, 3, 5 задания
 // Реализовать функцию, которая выводит (prompt) сообщение "Сколько карточек отобразить? От 1 до 5" и в зависимости от результата - будет выводить количество.
 // Должна быть защита от ввода других значений (проверка if). То-есть: у нас будет 2 функции, одна возвращает количество карточек, которое нужно ввести, другая - рендерить эти карточки (принимая массив аргументом)
+
+const LOCAL_STORAGE_CARDS_KEY = 'cards';
 
 function getCardsNumber(userNumber) {
 	const cardsNumber = Number(userNumber);
@@ -53,20 +62,45 @@ function renderCards(cardsArray) {
 		getCardClones('price-val').textContent =
 			`${firstCharacterOfPrice} ${priceWithoutFirstCharacter} ${card.currency}`;
 
+		// вешаем прослушиватель на кнопку удалить из каждой карточки
+		const cardDeleteButton = getCardClones('btn-delete');
+		cardDeleteButton.dataset.id = card.id;
+		cardDeleteButton.addEventListener('click', handleDeleteCard.bind(null, LOCAL_STORAGE_CARDS_KEY));
+		///////////////////////////////////////
+
 		productCardWrapper.appendChild(cardClone);
 	});
 }
 
+const handleDeleteCard = (storageDataKey, e) => {
+	const btnId = e.target.dataset.id;
+	const nearestProductCard = e.target.closest('.product-card');
 
-const handleWindowLoad = () => {
+	updateStorageDataByFilter(storageDataKey, btnId);
+
+	nearestProductCard.remove();
+
+	if (!getStorageDataArrayLength(storageDataKey)) {
+		removeFromStorage(storageDataKey);
+	};
+}
+
+const handleWindowLoad = (storageDataKey) => {
+	if (!getStorageDataArrayLength(storageDataKey)) {
+		setToStorage(storageDataKey, productCards);
+	};
+	const cards = getFromStorage(storageDataKey);
+
 	const promtResult = prompt('Сколько карточек отобразить? От 1 до 5', 1);
 
 	const cardsNumber = getCardsNumber(promtResult);
 
-	const productCardsProfile = productCards.slice(0, cardsNumber);
+	const productCardsProfile = cards.slice(0, cardsNumber);
 	renderCards(productCardsProfile);
-
 }
 
-window.addEventListener('load', handleWindowLoad);
+console.log('log');
+
+window.addEventListener('load', handleWindowLoad.bind(null, LOCAL_STORAGE_CARDS_KEY));
+
 
