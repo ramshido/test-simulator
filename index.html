@@ -7,36 +7,111 @@
 	<link rel="stylesheet" href="styles/nullstyle.css">
 	<link rel="stylesheet" href="styles/fonts.css">
 	<link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="styles/footer.css">
 	<title>Document</title>
 </head>
 
 <body>
-	<h1 class="title">Вибери свой продукт</h1>
-	<div class="container">
-		<div class="product-wrapper">
-			<img src="../images/bg-dandelion.png" class="product-wrapper__background">
-		</div>
-		<template id="product-card-template">
-			<div class="product-card">
-				<div class="product-card__img-wrapper">
-					<img src="" alt="" class="product-card__img">
-				</div>
-				<p class="product-card__skin-type">для нормальной кожи</p>
-				<h2 class="product-card__title"></h2>
-				<p class="product-card__descr"></p>
-				<ul class="product-card__structure">
-					<span class="product-card__str-subtitle">Состав:</span>
-				</ul>
-				<div class="product-card__price-wrapper">
-					<h2 class="product-card__price">Цена</h2>
-					<h2 class="product-card__price-val"></h2>
-				</div>
-				<button class="product-card__btn">Купить</button>
-				<button class="product-card__btn product-card__btn-delete">Удалить карточку</button>
+	<main class="main">
+		<h1 class="title">Вибери свой продукт</h1>
+		<div class="container">
+			<div class="product-wrapper">
+				<img src="../images/bg-dandelion.png" class="product-wrapper__background">
 			</div>
-		</template>
+			<template id="product-card-template">
+				<div class="product-card">
+					<div class="product-card__img-wrapper">
+						<img src="" alt="" class="product-card__img">
+					</div>
+					<p class="product-card__skin-type">для нормальной кожи</p>
+					<h2 class="product-card__title"></h2>
+					<p class="product-card__descr"></p>
+					<ul class="product-card__structure">
+						<span class="product-card__str-subtitle">Состав:</span>
+					</ul>
+					<div class="product-card__price-wrapper">
+						<h2 class="product-card__price">Цена</h2>
+						<h2 class="product-card__price-val"></h2>
+					</div>
+					<div class="product-card__btn">Купить</div>
+				</div>
+			</template>
+		</div>
+		<div class="user-registrate-btn" id="user-registrate-btn">Registrate</div>
+	</main>
+	<footer class="footer">
+		<div class="footer__container">
+			<div class="footer__navigation">
+				<div class="footer__social-info-wrapper">
+					<h2 class="footer__social-info-title">Product Cards</h2>
+					<h3 class="footer__social-info-subtitle">У нас самые лучшие продукты для кожи!</h3>
+					<div class="footer__social-links">
+						<a class="soc-network" href="telegram.com">
+							<img src="images/tg-icon.svg" alt="VK">
+						</a>
+						<a class="soc-network" href="vk.com">
+							<img src="images/vk-icon.svg" alt="Telegram">
+						</a>
+					</div>
+				</div>
+				<div class="footer__subscribe-container subscribe-container">
+					<h3 class="subscribe-container__title">Подпишись на наши акции:</h3>
+					<form class="subscribe-container__form" id="subscribing-form">
+						<input class="subscribe-container__input" type="email" id="form-input" name="email"
+							placeholder="Введи Email..." required>
+						<button class="subscribe-container__btn" type="submit" id="form-submit-btn">Подписаться</button>
+					</form>
+				</div>
+				<div class="footer__quick-links">
+					<span class="footer__quick-links-title">Быстрые ссылки</span>
+					<a href="#" class="footer__quick-links-item">Главная</a>
+					<a href="#" class="footer__quick-links-item">Магазин</a>
+					<a href="#" class="footer__quick-links-item">Контакты</a>
+				</div>
+			</div>
+			<div class="footer__product-address-wrapper">
+				<a href="#" class="footer__product-address">www.product-cards.com©all right reserve</a>
+			</div>
+		</div>
+	</footer>
+
+	<div class="modal-window" id="modal-window">
+		<div class="modal-window__overlay"></div>
+		<div class="modal-window__window">
+			<button class="modal-window__btn-close btn-close" id="modal-close-btn"></button>
+			<form class="modal-window__registration-form registration-form" id="form-registration">
+				<label class="registration-form__label">
+					Имя:
+					<input class="registration-form__input" type="text" placeholder="Введите имя..." name="firstName"
+						id="firstNameInput" required>
+				</label>
+				<label class="registration-form__label">
+					Фамилия:
+					<input class="registration-form__input" type="text" placeholder="Введите Фамилию..." name="secondName"
+						id="secondNameInput" required>
+				</label>
+				<label class="registration-form__label">
+					Дата рождения:
+					<input class="registration-form__input registration-form__date-input" type="date"
+						placeholder="Введите дату рождения..." name="date" id="date" required>
+				</label>
+				<label class="registration-form__label">
+					Логин:
+					<input class="registration-form__input" type="text" placeholder="Введите логин..." name="login" id="login"
+						required>
+				</label>
+				<label class="registration-form__label">
+					Пароль:
+					<input class="registration-form__input" type="password" placeholder="Введите пароль..." name="password"
+						id="form-registration-first-password" required>
+					<input class="registration-form__input" type="password" placeholder="Повторите пароль..." name="password"
+						id="form-registration-repeat-password" required>
+				</label>
+				<button class="modal-window__btn" id="btn-registrate" type="submit">Registrate</button>
+			</form>
+		</div>
 	</div>
-	</div>
+
 	<script src="js/main.js"></script>
 	<script src="js/homework-5.js"></script>
 	<script src="js/homework-6.js"></script>
@@ -44,6 +119,7 @@
 	<script src="js/homework-7.js" type="module"></script>
 	<script src="js/product-cards.js"></script>
 	<script src="js/homework-8.js" type="module"></script>
+	<script src="js/homework-9.js"></script>
 </body>
 
 </html>

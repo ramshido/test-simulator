@@ -102,5 +102,3 @@ const handleWindowLoad = (storageDataKey) => {
 console.log('log');
 
 window.addEventListener('load', handleWindowLoad.bind(null, LOCAL_STORAGE_CARDS_KEY));
-
-
