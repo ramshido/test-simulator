@@ -6,9 +6,17 @@
 // email должен соответствовать стандартам (добавить валидацию), если он не заполнен - форма не отправляется.
 // Кнопка "Подписаться" и есть "отправкой формы", при нажатии на которую мы будем выводить консоль лог в виде объекта:  { email: 'введенная почта' }
 
-const form = document.querySelector('#subscribing-form');
-const formSubmitBtn = document.querySelector('#form-submit-btn');
+const subscribingForm = document.querySelector('#subscribing-form');
 const formInput = document.querySelector('#form-input');
+
+function getFormData(form) {
+	const
+		formElement = form,
+		formData = new FormData(formElement),
+		formObject = Object.fromEntries(formData.entries());
+
+	return formObject;
+}
 
 function getEmailRegExpMatchArray(email) {
 	return String(email)
@@ -18,29 +26,30 @@ function getEmailRegExpMatchArray(email) {
 		);
 };
 
-form.addEventListener('submit', e => {
+const handleEmailInputValidation = () => {
+	const isValid = getEmailRegExpMatchArray(formInput.value);
+
+	formInput.setCustomValidity(isValid ? '' : 'Поле неправильно заполнена');
+
+	if (!isValid) {
+		formInput.reportValidity();
+	};
+}
+
+formInput.addEventListener('input', handleEmailInputValidation);
+subscribingForm.addEventListener('submit', e => {
 	e.preventDefault();
 
-	if (!formInput.value.length) {
-		alert('Поле на заполнено');
-		form.reset();
+	if (!form.checkValidity()) {
+		alert(`Ошибка, Фомра неправильно заполнена`);
 		return;
-	};
+	}
 
-	const isInputValid = getRegExpMatchArray(formInput.value.trim().toLowerCase());
-
-	if (!isInputValid) {
-		alert('Email не корректен, попробуйте снова');
-		form.reset();
-		return;
-	};
-
-	const formElement = e.target;
-	const formData = new FormData(formElement);
-	const formObject = Object.fromEntries(formData.entries());
+	const formObject = getFormData(e.target);
 
 	console.log(formObject);
 });
+
 
 // Уровень 2:
 
@@ -55,16 +64,16 @@ const
 
 formRegistration.reset();
 
-const showModalWindow = () => {
+const handleModalWindowShowing = () => {
 	modalWindow.classList.add('modal-window_showed');
 };
 
-const closeModalWindow = () => {
+const handleModalWindowClosing = () => {
 	modalWindow.classList.remove('modal-window_showed');
 	formRegistration.reset();
 };
 
-function validatePasswords() {
+function handlePasswordsValidation() {
 	const isValid = String(firstPasswordInput.value).trim().toLowerCase() ===
 		String(repeatPasswordInput.value).trim().toLowerCase();
 
@@ -75,25 +84,24 @@ function validatePasswords() {
 	}
 }
 
-const submitForm = e => {
+const handleFormSubmission = e => {
 	e.preventDefault();
 
-	if (!e.target.checkValidity()) return;
+	if (!e.target.checkValidity()) {
+		return;
+	};
 
-	const
-		formElement = e.target,
-		formData = new FormData(formElement),
-		user = {
-			...Object.fromEntries(formData.entries()),
-			createdOn: new Date(),
-		};
+	const formObject = getFormData(e.target);
+	const user = {
+		...formObject,
+		createdOn: new Date(),
+	};
 	console.log(user);
-
 };
 
-userRegistrateBtn.addEventListener('click', showModalWindow);
-overlay.addEventListener('click', closeModalWindow);
-modalCloseBtn.addEventListener('click', closeModalWindow);
+userRegistrateBtn.addEventListener('click', handleModalWindowShowing);
+overlay.addEventListener('click', handleModalWindowClosing);
+modalCloseBtn.addEventListener('click', handleModalWindowClosing);
 
-repeatPasswordInput.addEventListener('input', validatePasswords);
-formRegistration.addEventListener('submit', submitForm);
+repeatPasswordInput.addEventListener('input', handlePasswordsValidation);
+formRegistration.addEventListener('submit', handleFormSubmission);
