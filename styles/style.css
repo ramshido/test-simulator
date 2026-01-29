@@ -3,6 +3,7 @@
   display: block;
   width: 100px;
   height: 100px;
+	margin-bottom: 10px;
 }
 
 .modal-close-button {
@@ -14,11 +15,13 @@
   background-color: transparent;
   cursor: pointer;
   padding: 10px;
+	font-weight: 700;
+	font-size: 14px;
 }
 
 .modal {
-  position: absolute;
   display: none;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -26,6 +29,8 @@
   height: 50rem;
   background-color: #fff;
   border-radius: 20px;
+	padding: 20px;
+	font-size: 20px;
 }
 
 .modal-showed {
@@ -42,4 +47,14 @@
 
 .overlay-showed {
   display: block;
+}
+
+.modal__title {
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
+.modal__item {
+	margin-bottom: 10px;
+	display: block;
 }

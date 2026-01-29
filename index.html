@@ -1,39 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="styles/modal-styles.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="styles/nullstyle.css">
+	<link rel="stylesheet" href="styles/fonts.css">
+	<link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
-	<ul class="sites-wrapper">
-		<li class="sites__item">
-			<a href="index.html" class="sites__link">Main Page</a>
-		</li>
-	</ul>
+	<div class="overlay" id="overlay"></div>
 
-  <div class="overlay" id="overlay"></div>
+	<button class="button" id="registration-button">Регистрация</button>
+	<button class="button" id="auth-button">Аутентификация</button>
 
-  <button class="button" id="registration-button">Регистрация</button>
-  <button class="button" id="auth-button">Аутентификация</button>
+	<div id="registration-modal" class="modal">
+		<button id="modal-close-button" class="modal-close-button">X</button>
+		<h1 class="modal__title">Регистрация</h1>
+		<span class="modal__item">Пароль:</span>
+		<span class="modal__item">Повторите пароль:</span>
+		<span class="modal__item">Логин:</span>
+		<span class="modal__item">Почта:</span>
+	</div>
 
-  <div id="registration-modal" class="modal">
-    <button id="modal-close-button" class="modal-close-button">X</button>
-    <h1>Регистрация</h1>
-    <span>Пароль</span>
-    <span>Повторите пароль</span>
-    <span>Логин</span>
-    <span>Почта</span>
-  </div>
+	<div id="auth-modal" class="modal">
+		<button id="modal-close-button" class="modal-close-button">X</button>
+		<h1 class="modal__title">Аутентификация</h1>
+		<p class="modal__item">Логин</p>
+		<p class="modal__item">Пароль</p>
+	</div>
 
-  <div id="auth-modal" class="modal">
-    <button id="modal-close-button" class="modal-close-button">X</button>
-    <h1>Аутентификация</h1>
-    <p>Логин</p>
-    <p>Пароль</p>
-  </div>
-
-  <script type="module" src="script.js"></script>
+	<script type="module" src="js/main.js"></script>
 </body>
+
 </html>
