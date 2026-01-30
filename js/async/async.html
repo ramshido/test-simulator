@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>UserCards</title>
+	<link rel="stylesheet" href="async.css">
+</head>
+
+<body>
+	<main>
+		<div class="user-dashboard">
+			<h1 class="dashboard-title">Список пользователей</h1>
+			<div class="controls-panel">
+				<button class="btn" id="btn-clear-all">Удалить все карточки</button>
+				<button class="btn" id="btn-load-all">Получить все карточки</button>
+			</div>
+			<div class="status-message">
+				<p class="status-text">Карточки пользователей загружаются...</p>
+			</div>
+
+			<ul class="user-cards-list list-none"></ul>
+
+			<template id="template-user-card">
+				<li data-id="" class="user-card-item">
+					<p class="user-id user-info"></p>
+					<p class="user-firstname user-info"></p>
+					<p class="user-lastname user-info"></p>
+					<p class="user-email user-info"></p>
+					<p class="user-age user-info"></p>
+					<p class="user-city user-info"></p>
+					<p class="user-job user-info"></p>
+					<button class="btn-delete-card btn" type="button" id="btn-delete-card">Удалить карточку</button>
+				</li>
+			</template>
+		</div>
+	</main>
+	<script type="module" src="async.js"></script>
+</body>
+
+</html>
