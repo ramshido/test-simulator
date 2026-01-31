@@ -14,27 +14,34 @@ const USERS_STORAGE_KEY = 'users';
 async function fetchUsers() {
 	try {
 		const response = await fetch('users.json');
+
+		if (!response.ok) {
+			throw new Error('Ошибка при запросе');
+		}
+
 		const users = await response.json();
 		setToStorage(USERS_STORAGE_KEY, users);
 		return users;
 	} catch (error) {
 		downloadingText.textContent = 'Ошибка при загрузке данных';
-		throw new Error('Ошибка загрузки');
+		throw new Error(error.message);
 	}
 }
 
 function renderCardsUsers(users) {
 	usersList.innerHTML = '';
+
 	users.forEach(user => {
 		const template = document.querySelector('#template-user-card').content.cloneNode(true);
 
 		const li = template.querySelector('.user-card-item');
 		li.dataset.id = user.id;
 
-		const cardDeleteBtn = template.querySelector('.btn-delete-card')
+		const cardDeleteBtn = template.querySelector('.btn-delete-card');
 		cardDeleteBtn.addEventListener('click', () => {
 			deleteUser(user.id);
-		})
+			cardDeleteBtn.closest('.user-card-item').remove();
+		});
 
 		template.querySelector('.user-id').textContent = `ID: ${user.id}`;
 		template.querySelector('.user-firstname').textContent = `Имя: ${user.name}`;
@@ -70,20 +77,27 @@ allCardsDeleteButton.addEventListener('click', () => {
 });
 
 allCardsAddButton.addEventListener('click', async () => {
-	let users = getFromStorage(USERS_STORAGE_KEY);
-	if (!users) {
-		users = await fetchUsers();
+	const usersFromStorage = getFromStorage(USERS_STORAGE_KEY);
+	const usersFromRequest = await fetchUsers();
+
+	if (!usersFromStorage) {
+		renderCardsUsers(usersFromRequest);
 	}
-	renderCardsUsers(users);
+
+	if (usersFromStorage.length !== usersFromRequest.length) {
+		renderCardsUsers(usersFromRequest);
+	} else {
+		renderCardsUsers(usersFromStorage);
+	}
+
 });
 
 function deleteUser(id) {
-	const cardElement = document.querySelector(`.user-card-item[data-id="${id}"]`);
-	if (cardElement) cardElement.remove();
-
 	let users = getFromStorage(USERS_STORAGE_KEY);
-	users = users.filter(user => user.id != Number(id));
-	setToStorage(USERS_STORAGE_KEY, users);
+	if (users) {
+		users = users.filter(user => user.id != Number(id));
+		setToStorage(USERS_STORAGE_KEY, users);
+	}
 }
 
 const handleWindowLoad = () => {
