@@ -81,7 +81,7 @@ function handlePasswordsValidation() {
 
 	if (!isValid) {
 		repeatPasswordInput.reportValidity();
-	}
+	};
 }
 
 const handleFormSubmission = e => {
